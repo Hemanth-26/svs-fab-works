@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Slideshow</title>
+  <style>
+    .slideshow {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+    }
+    
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+    }
+    
+    .slide.active {
+      display: block;
+    }
+    
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .indicators {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+    }
+    
+    .indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: gray;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+    
+    .indicator.active {
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="slideshow">
+    <div class="slide active">
+      <img src="./images/portfolio_1.webp" alt="Image 1">
+      <img src="./images/portfolio_2.webp" alt="Image 2">
+      <img src="./images/portfolio_3.webp" alt="Image 3">
+      <img src="./images/portfolio_4.webp" alt="Image 4">
+      <img src="./images/portfolio_5.webp" alt="Image 5">
+      <img src="./images/portfolio_6.webp" alt="Image 6">
+    </div>
+    <div class="slide">
+      <img src="./images/portfolio_6.webp" alt="Image 6">
+      <img src="./images/portfolio_5.webp" alt="Image 5">
+      <img src="./images/portfolio_4.webp" alt="Image 4">
+      <img src="./images/portfolio_3.webp" alt="Image 3">
+      <img src="./images/portfolio_2.webp" alt="Image 2">
+      <img src="./images/portfolio_1.webp" alt="Image 1">
+    </div>
+    <div class="slide">
+      <img src="image13.jpg" alt="Image 13">
+      <img src="image14.jpg" alt="Image 14">
+      <img src="image15.jpg" alt="Image 15">
+      <img src="image16.jpg" alt="Image 16">
+      <img src="image17.jpg" alt="Image 17">
+      <img src="image18.jpg" alt="Image 18">
+    </div>
+  </div>
+  <div class="indicators">
+    <div class="indicator"></div>
+    <div class="indicator"></div>
+    <div class="indicator"></div>
+  </div>
+  
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const indicators = document.querySelectorAll('.indicator');
+    let currentSlide = 0;
+    
+    function showSlide(index) {
+      slides.forEach((slide) => {
+        slide.classList.remove('active');
+      });
+      indicators.forEach((indicator) => {
+        indicator.classList.remove('active');
+      });
+      
+      slides[index].classList.add('active');
+      indicators[index].classList.add('active');
+    }
+    
+    function nextSlide() {
+      currentSlide++;
+      if (currentSlide >= slides.length) {
+        currentSlide = 0;
+      }
+      showSlide(currentSlide);
+    }
+    
+    setInterval(nextSlide, 3000);
+    
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => {
+        showSlide(index);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,680 @@
+:root {
+  --primary: #fcd300;
+  --secondary: #949896;
+  --text-primary: #737373;
+  --text-secondary: #fc724d;
+  --white: #fff;
+  --black: #000000;
+  --bg-color-blue: #112435;
+  --bg-color-grey: #ececf2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-padding-top: 8rem; /* height of sticky header */
+  overflow-y: scroll;
+}
+
+body {
+  background-color: var(--white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: capitalize;
+}
+
+/*-------------------<> Section Title styles <>---------------------------*/
+
+.section-con {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  white-space: nowrap;
+  color: var(--black);
+  padding: 3rem 1rem;
+}
+
+.section-title {
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section-icon {
+  display: block;
+  /* position: absolute; */
+}
+
+.section-icon::before,
+.section-icon::after {
+  content: "";
+  display: inline-block;
+  width: 5em;
+  height: 1px;
+  background: black;
+  vertical-align: middle;
+}
+
+/*-------------------<> Header section <>---------------------------*/
+/* CSS for the header */
+header {
+  background-color: var(--primary);
+  /* color: var(--text-primary); */
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Style for sticky */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* .sticky + .content {
+  padding-top: 102px;
+} */
+
+.menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* CSS for the logo */
+.logo {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #975721;
+}
+
+/* CSS for the hamburger menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
+/* CSS for the menu list */
+.menu-list {
+  display: flex;
+  list-style-type: none;
+  color: var(--text-primary);
+  font-weight: bold;
+}
+
+/* CSS for the menu items */
+.menu-item {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+/* Underline Link styles */
+.menu-item-link {
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+}
+
+.menu-item-link:focus,
+.menu-item-link:active {
+  color: inherit;
+}
+
+/* Fade in */
+
+.menu-item-link:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: var(--text-secondary);
+  transition: width 0.2s ease;
+  -webkit-transition: width 0.3s ease;
+}
+
+.menu-item-link:hover:after {
+  width: 100%;
+  left: 0;
+  background: var(--text-secondary);
+}
+
+/*-------------------<> Home section <>---------------------------*/
+/* CSS for Home section */
+.home {
+  position: relative;
+}
+
+.banner {
+  position: relative;
+  height: 25rem;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: inherit;
+  object-fit: cover;
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+  position: absolute;
+  z-index: 1;
+}
+
+.banner .overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+}
+
+.banner .overlay h1 {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.banner .overlay p {
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.6rem 1.25rem;
+  color: #fff;
+  background-color: #949896;
+  border: 1px solid #fcd300;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.welcome-con {
+  display: flex;
+  padding: 2rem;
+}
+.welcome-title {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 1.5rem;
+}
+.welcome-title p {
+  width: 100%;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.welcome-title span {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  white-space: nowrap;
+  color: var(--black);
+}
+
+.center-line::before {
+  content: "";
+  background-color: var(--black);
+  height: 1px;
+  width: 100%;
+  margin-right: 1rem;
+}
+
+.center-line::after {
+  content: "";
+  background-color: var(--black);
+  height: 1px;
+  width: 100%;
+  margin-left: 1rem;
+}
+
+.welcome-des {
+  width: 70%;
+  padding: 1.5rem;
+}
+.welcome-des p {
+  line-height: 24px;
+}
+.welcome-des p span {
+  font-weight: 600;
+}
+
+/*-------------------<> Philosophy section <>---------------------------*/
+.philosophy-body {
+  position: relative;
+  height: 30rem;
+  overflow: hidden;
+}
+
+.philosophy-body img {
+  width: 100%;
+  height: inherit;
+  /* object-fit: cover; */
+  position: absolute;
+  z-index: 1;
+}
+
+.philosophy-body .overlay {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+}
+
+.philosophy-content-con {
+  display: flex;
+  padding: 1rem;
+}
+
+.philosophy-content-con .philosophy-section {
+  padding: 1rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.philosophy-content-con .philosophy-section h3 {
+  margin-bottom: 1rem;
+}
+
+.philosophy-content-con .philosophy-section .philosophy-content {
+  /* display: none; */
+  /* visibility: hidden; */
+  visibility: visible;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 2;
+}
+
+.philosophy-content-con #section1:hover .philosophy-content {
+  /* display: block; */
+  visibility: visible;
+}
+
+.philosophy-content-con
+  .philosophy-section:not(#section1):hover
+  .philosophy-content {
+  /* display: block; */
+  visibility: visible;
+}
+
+.philosophy-content-con
+  .philosophy-section:not(:hover)
+  #section1
+  .philosophy-content {
+  /* display: none; */
+  visibility: hidden;
+}
+
+/*-------------------<> Services section <>---------------------------*/
+.services-body {
+  background-color: var(--bg-color-grey);
+  padding: 2rem;
+}
+.services-section-one {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.services-section-one .services-slide-img {
+  width: 40%;
+  height: 25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-section-one .services-slide-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  transition: opacity 1s ease-in-out;
+}
+
+.services-section-one .services-slide-img img.active {
+  opacity: 1;
+}
+
+.services-section-one .services-types {
+  width: 60%;
+  padding: 2rem;
+}
+.services-section-one .services-types p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.services-section-one .services-types ul {
+  list-style: none;
+}
+
+.services-section-one .services-types ul li {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 3rem;
+}
+
+.services-section-one .services-types ul li:before {
+  content: "\2713\0020";
+}
+
+.services-section-two {
+  padding: 3rem 2rem;
+}
+
+.services-section-two p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.services-section-two p span {
+  font-weight: 600;
+}
+
+/*-------------------<> Portfolio section <>---------------------------*/
+
+.portfolio-body {
+  padding: 2rem;
+}
+
+/* .portfolio-section-one {
+
+} */
+
+.portfolio-section-one .slide {
+  display: none;
+}
+
+.portfolio-section-one .slide.active {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.portfolio-section-one .slide img {
+  padding: 2rem 1rem;
+}
+
+.portfolio-section-two {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-section-two .indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--bg-color-grey);
+  margin: 5px;
+  cursor: pointer;
+}
+
+.portfolio-section-two .indicator.active {
+  background-color: var(--text-secondary);
+}
+
+/*-------------------<> Contact section <>---------------------------*/
+.contact-body {
+  position: relative;
+  height: 25rem;
+  overflow: hidden;
+}
+
+.contact-body img {
+  width: 100%;
+  height: inherit;
+  /* object-fit: cover; */
+  position: absolute;
+  z-index: 1;
+}
+
+.contact-body .overlay {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+}
+
+.contact-content-con .contact-section-one {
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+  align-items: center;
+}
+.contact-content-con .contact-section-one p {
+  color: var(--text-secondary);
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1rem;
+}
+.contact-content-con .contact-section-one span {
+  color: var(--black);
+  font-size: 3rem;
+  font-weight: 600;
+  padding: 1rem;
+}
+.contact-content-con .contact-section-one div {
+  color: var(--black);
+  font-size: 1rem;
+  /* font-weight: 600; */
+  padding: 1rem;
+  width: 50%;
+}
+
+/*-------------------<> Contact section <>---------------------------*/
+
+footer {
+  /* background-color: #f2f2f2; */
+  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.footer-section h4 {
+  display: inline-block;
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  padding-bottom: 5px;
+  color: var(--text-secondary);
+}
+
+.footer-section h4:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid var(--secondary);
+}
+
+.footer-section span {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-section p {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.footer-section a {
+  color: var(--black);
+  font-size: 1rem;
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+
+.footer-section a i{
+  margin-right: 5px;
+}
+
+.footer-section address {
+  font-size: 1rem;
+  font-style: normal;
+  text-align: center;
+}
+
+.footer-section .email-icon {
+  margin-right: 2px;
+}
+
+/*-------------------<> Responsive Design section <>---------------------------*/
+/* CSS for small and mobile devices */
+@media only screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .menu-list {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-item {
+    margin: 5px 0;
+  }
+
+  .menu-list.active {
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+  }
+
+  .welcome-con {
+    flex-direction: column;
+  }
+  .welcome-title {
+    width: 100%;
+    padding: 2rem;
+  }
+  .welcome-des {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .philosophy-body {
+    position: relative;
+    height: max-content;
+    overflow: auto;
+  }
+  .philosophy-body img {
+    display: none;
+  }
+  .philosophy-body .overlay {
+    position: initial;
+    transform: none;
+    background-color: var(--bg-color-blue);
+  }
+  .philosophy-content-con {
+    flex-direction: column;
+  }
+
+  .services-section-one {
+    flex-direction: column;
+  }
+  .services-section-one .services-slide-img {
+    width: 100%;
+  }
+  /* .services-section-one .services-slide-img img {
+    object-fit: contain;
+  } */
+  .services-section-one .services-types {
+    width: 100%;
+  }
+
+  .contact-body {
+    position: relative;
+    height: max-content;
+    overflow: auto;
+  }
+  .contact-body img {
+    display: none;
+  }
+  .contact-body .overlay {
+    position: initial;
+    transform: none;
+    background-color: var(--bg-color-grey);
+  }
+  .contact-content-con {
+    flex-direction: column;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+  .footer-section {
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+}
