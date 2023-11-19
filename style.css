@@ -434,6 +434,25 @@ header {
   flex-wrap: wrap;
   justify-content: center;
   overflow: hidden;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .portfolio-section-one .slide img {
@@ -566,7 +585,7 @@ footer {
   text-decoration: none;
 }
 
-.footer-section a i{
+.footer-section a i {
   margin-right: 5px;
 }
 
